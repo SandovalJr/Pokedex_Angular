@@ -20,12 +20,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DescriptionPokemonComponent } from './components/description-pokemon/description-pokemon.component';
 
+/*****
+IMPORTACION DE METODOS HTTP
+******/
+import { HttpClientModule } from '@angular/common/http';
+import { GridCardsComponent } from './components/grid-cards/grid-cards.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     CardsComponent,
     DescriptionPokemonComponent,
+    GridCardsComponent,
   ],
   imports: [
     appRouting,
@@ -37,6 +44,7 @@ import { DescriptionPokemonComponent } from './components/description-pokemon/de
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
