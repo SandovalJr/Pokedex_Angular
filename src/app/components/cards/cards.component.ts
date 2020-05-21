@@ -1,34 +1,18 @@
-import { Component } from '@angular/core';
-import { pluck, map, concatMap, switchMap } from 'rxjs/operators';
-
-// http
-import { HttpClient } from '@angular/common/http';
-import { from } from 'rxjs';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css'],
 })
-export class CardsComponent {
-  constructor(private http: HttpClient) {
-    this.getPokemons();
-  }
+export class CardsComponent implements OnInit {
+  // Input se encarga de conectar el elemento padre con el elemento input
+  @Input() pokemonInput: any;
 
-  public getPokemons() {
-    this.http
-      .get(`https://pokeapi.co/api/v2/pokemon`)
-      .pipe(
-        pluck('results'),
-        switchMap((PokemonsArray: any) =>
-          from(PokemonsArray).pipe(
-            pluck('url'),
-            concatMap((url: string) => this.http.get(url))
-          )
-        )
-      )
-      .subscribe(
-        pokemons => console.log(pokemons)
-      );
+
+  constructor() {}
+
+  ngOnInit():void {
+    // console.log(this.pokemonInput);
   }
 }

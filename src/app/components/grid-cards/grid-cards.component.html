@@ -1,7 +1,15 @@
-<mat-grid-list cols="4" rowHeight="1:1.2">
-  <mat-grid-tile>
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 
-    <app-cards></app-cards>
-  
-  </mat-grid-tile>
-</mat-grid-list>
+<div *ngIf="!loading" class="fadeIn">
+  <mat-grid-list cols="3" rowHeight="40vh">
+    <mat-grid-tile *ngFor="let pokemonRecibido of ArraysPokemon">
+      <app-cards [pokemonInput]="pokemonRecibido"></app-cards>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="paginacion">
+    <mat-icon (click)="paginacionLeft()">arrow_left</mat-icon>
+    <p>{{ indicePaginacion }}</p>
+    <mat-icon (click)="paginacionRight()">arrow_right</mat-icon>
+  </div>
+</div>

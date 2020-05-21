@@ -1,22 +1,21 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{ pokemonInput.name }}</mat-card-title>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="pokemonInput.sprites.front_default"
+    [alt]="pokemonInput.name"
+  />
+  <mat-card-content>
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip *ngFor="let tipo of pokemonInput.types">
+        {{ tipo.type.name }}
+      </mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
 
-    <mat-card class="card">
-      <mat-card-header>
-        <mat-card-title>Shiba Inu</mat-card-title>
-      </mat-card-header>
-      <img
-        mat-card-image
-        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-        alt="Photo of a Shiba Inu"
-      />
-      <mat-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz
-          breeds of dog from Japan. A small, agile dog that copes very well with
-          mountainous terrain, the Shiba Inu was originally bred for hunting.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Ver mas..</button>
-      </mat-card-actions>
-    </mat-card>
-
+  <mat-card-actions>
+    <button mat-button>Ver mas..</button>
+  </mat-card-actions>
+</mat-card>

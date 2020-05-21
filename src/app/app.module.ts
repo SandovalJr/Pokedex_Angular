@@ -19,6 +19,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DescriptionPokemonComponent } from './components/description-pokemon/description-pokemon.component';
+import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 /*****
 IMPORTACION DE METODOS HTTP
@@ -45,6 +49,10 @@ import { GridCardsComponent } from './components/grid-cards/grid-cards.component
     MatButtonModule,
     MatGridListModule,
     HttpClientModule,
+    MatListModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

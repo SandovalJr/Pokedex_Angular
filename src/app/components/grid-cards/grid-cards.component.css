@@ -1,5 +1,41 @@
 mat-grid-list {
-    width: 100vw;
-    /* height: auto; */
+  width: 100vw;
+  /* height: auto; */
+}
+
+.paginacion {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  background: #f2f2f2;
+  justify-content: space-around;
+}
+
+.paginacion > p {
+  line-height: 70px;
+  font-size: 20px;
+}
+
+mat-icon {
+  font-size: 50px;
+  height: 100%;
+  /* height: 0px; */
+  cursor: pointer;
+}
+
+mat-progress-bar {
+  margin-top: 50vh;
+}
+
+.fadeIn {
+  animation: animacion 0.5s ease-in-out forwards;
+}
+
+@keyframes animacion {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
