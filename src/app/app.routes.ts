@@ -7,7 +7,7 @@ import { GridCardsComponent } from './components/grid-cards/grid-cards.component
 
 const routes: Routes = [
   { path: 'Home', component: GridCardsComponent },
-  { path: 'description', component: DescriptionPokemonComponent },
+  { path: 'description/:id', component: DescriptionPokemonComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'Home' },
 ];
 

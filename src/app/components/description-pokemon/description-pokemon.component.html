@@ -1,28 +1,29 @@
 <div class="contenedor">
-  <h1>Nombre Pokemon</h1>
+  <h1>{{ PokemonsRecibidos.name }}</h1>
 
   <div class="main-information">
     <ul class="tipos">
-      <li>Tipo 1</li>
-      <li>Tipo 2</li>
+      <li *ngFor="let tipo of PokemonsRecibidos.types">{{ tipo.type.name }}</li>
     </ul>
 
     <div class="Fila1">
-      <img src="" alt="">
+      <img
+        [src]="PokemonsRecibidos.sprites.front_default"
+        style="width: 250px; height: 250px;"
+        alt=""
+      />
       <ul>
         <li>Estadísticas</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li *ngFor="let stadistic of PokemonsRecibidos.stats">
+          {{ stadistic.stat.name }} : {{ stadistic.base_stat }}
+        </li>
       </ul>
     </div>
 
     <div class="descripcion">
       <h4>Descripción</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, non!</p>
+      <p>{{ descripcion.flavor_text }}</p>
     </div>
-
   </div>
 
   <div class="profile">
@@ -35,7 +36,5 @@
     </mat-grid-list>
   </div>
 
-  <div class="moves">
-
-  </div>
+  <div class="moves"></div>
 </div>
