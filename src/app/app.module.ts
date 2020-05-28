@@ -30,6 +30,7 @@ IMPORTACION DE METODOS HTTP
 import { HttpClientModule } from '@angular/common/http';
 import { GridCardsComponent } from './components/grid-cards/grid-cards.component';
 import { ChangeColorTypeDirective } from './directivas/change-color-type.directive';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ChangeColorTypeDirective } from './directivas/change-color-type.directi
     DescriptionPokemonComponent,
     GridCardsComponent,
     ChangeColorTypeDirective,
+    BusquedaComponent,
   ],
   imports: [
     appRouting,
