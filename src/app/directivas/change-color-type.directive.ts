@@ -13,7 +13,7 @@ export class ChangeColorTypeDirective {
   @Input() nameType: string;
 
   constructor(private el: ElementRef, private render: Renderer2) {}
-  
+
   ngOnInit(): void {
     console.log(this.nameType);
     this.TextColor();
