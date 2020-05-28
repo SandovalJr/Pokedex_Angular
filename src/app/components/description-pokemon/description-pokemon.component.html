@@ -3,7 +3,13 @@
 
   <div class="main-information">
     <ul class="tipos">
-      <li *ngFor="let tipo of PokemonsRecibidos.types">{{ tipo.type.name }}</li>
+      <li
+        appChangeColorType
+        [nameType]="tipo.type.name"
+        *ngFor="let tipo of PokemonsRecibidos.types"
+      >
+        {{ tipo.type.name }}
+      </li>
     </ul>
 
     <div class="Fila1">
