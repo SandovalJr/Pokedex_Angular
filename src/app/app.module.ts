@@ -29,6 +29,7 @@ IMPORTACION DE METODOS HTTP
 ******/
 import { HttpClientModule } from '@angular/common/http';
 import { GridCardsComponent } from './components/grid-cards/grid-cards.component';
+import { ChangeColorTypeDirective } from './directivas/change-color-type.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { GridCardsComponent } from './components/grid-cards/grid-cards.component
     CardsComponent,
     DescriptionPokemonComponent,
     GridCardsComponent,
+    ChangeColorTypeDirective,
   ],
   imports: [
     appRouting,
