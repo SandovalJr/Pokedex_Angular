@@ -1,1 +1,25 @@
-<p>busqueda works!</p>
+<h4>Buscar Pokemon</h4>
+
+<div class="row justify-content-center">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="">Buscar Pokemon</label>
+      <input
+        type="text"
+        class="form-control"
+        #inputSearch
+        aria-describedby="helpId"
+      />
+    </div>
+  </div>
+</div>
+
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
+<div *ngIf="!loading" class="fadeIn">
+  <mat-grid-list cols="1" rowHeight="40vh">
+    <mat-grid-tile>
+      <app-cards [pokemonInput]="pokemonRecibido"></app-cards>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
