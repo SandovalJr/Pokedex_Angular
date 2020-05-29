@@ -13,13 +13,14 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 
-<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
-
-<div *ngIf="!loading" class="fadeIn">
-  <mat-grid-list cols="1" rowHeight="40vh">
-    <mat-grid-tile>
-      <app-cards [pokemonInput]="pokemonRecibido"></app-cards>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div *ngIf="!loading" class="fadeIn">
+    <mat-grid-list cols="1" rowHeight="40vh">
+      <mat-grid-tile>
+        <app-cards [pokemonInput]="pokemonRecibido"></app-cards>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

@@ -68,9 +68,13 @@ export class BusquedaComponent implements OnInit, AfterViewInit {
           this.http.get(`${this.url}${nombrePokemon}`)
         )
       )
-      .subscribe((value) => {
-        this.pokemonRecibido = value;
-        this.loading = false;
-      });
+      .subscribe(
+        (value) => {
+          this.pokemonRecibido = value;
+          this.loading = false;
+        },
+
+        (error) => this.searchPokemon()
+      );
   }
 }

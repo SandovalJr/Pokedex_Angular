@@ -1,48 +1,49 @@
 <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<ng-container *ngIf="!loading">
+  <div class="contenedor">
+    <h1>{{ PokemonsRecibidos.name }}</h1>
 
-<div class="contenedor">
-  <h1>{{ PokemonsRecibidos.name }}</h1>
-
-  <div class="main-information">
-    <ul class="tipos">
-      <li
-        appChangeColorType
-        [nameType]="tipo.type.name"
-        *ngFor="let tipo of PokemonsRecibidos.types"
-      >
-        {{ tipo.type.name }}
-      </li>
-    </ul>
-
-    <div class="Fila1">
-      <img
-        [src]="PokemonsRecibidos.sprites.front_default"
-        style="width: 250px; height: 250px;"
-        alt=""
-      />
-      <ul>
-        <li>Estadísticas</li>
-        <li *ngFor="let stadistic of PokemonsRecibidos.stats">
-          {{ stadistic.stat.name }} : {{ stadistic.base_stat }}
+    <div class="main-information">
+      <ul class="tipos">
+        <li
+          appChangeColorType
+          [nameType]="tipo.type.name"
+          *ngFor="let tipo of PokemonsRecibidos.types"
+        >
+          {{ tipo.type.name }}
         </li>
       </ul>
+
+      <div class="Fila1">
+        <img
+          [src]="PokemonsRecibidos.sprites.front_default"
+          style="width: 250px; height: 250px;"
+          alt=""
+        />
+        <ul>
+          <li>Estadísticas</li>
+          <li *ngFor="let stadistic of PokemonsRecibidos.stats">
+            {{ stadistic.stat.name }} : {{ stadistic.base_stat }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="descripcion">
+        <h4>Descripción</h4>
+        <p>{{ descripcion.flavor_text }}</p>
+      </div>
     </div>
 
-    <div class="descripcion">
-      <h4>Descripción</h4>
-      <p>{{ descripcion.flavor_text }}</p>
+    <div class="profile">
+      <h3>Profile</h3>
+      <mat-grid-list cols="2" rowHeight="30px">
+        <mat-grid-tile>1</mat-grid-tile>
+        <mat-grid-tile>2</mat-grid-tile>
+        <mat-grid-tile>3</mat-grid-tile>
+        <mat-grid-tile>4</mat-grid-tile>
+      </mat-grid-list>
     </div>
-  </div>
 
-  <div class="profile">
-    <h3>Profile</h3>
-    <mat-grid-list cols="2" rowHeight="30px">
-      <mat-grid-tile>1</mat-grid-tile>
-      <mat-grid-tile>2</mat-grid-tile>
-      <mat-grid-tile>3</mat-grid-tile>
-      <mat-grid-tile>4</mat-grid-tile>
-    </mat-grid-list>
+    <div class="moves"></div>
   </div>
-
-  <div class="moves"></div>
-</div>
+</ng-container>
