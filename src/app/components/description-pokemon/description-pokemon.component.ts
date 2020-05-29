@@ -12,6 +12,8 @@ import { pluck, concatMap, switchMap, map, filter } from 'rxjs/operators';
 export class DescriptionPokemonComponent implements OnInit {
   public PokemonsRecibidos: any;
   public descripcion: any;
+  public loading = true;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private http: HttpClient
@@ -30,6 +32,7 @@ export class DescriptionPokemonComponent implements OnInit {
         )
       )
       .subscribe((pokemon) => {
+        this.loading = false;
         this.PokemonsRecibidos = pokemon;
         this.descripcion = this.PokemonsRecibidos.flavor_text_entries.find(
           (descripcion) =>

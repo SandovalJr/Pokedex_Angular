@@ -1,9 +1,11 @@
 <mat-drawer class="example-sidenav" [opened]="abrirSidenav" mode="over">
-  <mat-icon style="float: left;" (click)="cerrarSidenavmethod()"
+  <mat-icon class="icono" style="float: left;" (click)="cerrarSidenavmethod()"
     >close</mat-icon
   >
   <br />
   <ul>
+    <li><a routerLink="Home">Home</a></li>
     <li><a routerLink="buscar">BuscarPokemon</a></li>
+    <li><a routerLink="about">About</a></li>
   </ul>
 </mat-drawer>

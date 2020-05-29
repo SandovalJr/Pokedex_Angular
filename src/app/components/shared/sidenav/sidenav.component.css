@@ -1,5 +1,10 @@
-
-  .example-sidenav {
-    padding: 20px;
-    /* z-index: -10; */
-  }
+.example-sidenav {
+  padding: 20px;
+  /* z-index: -10; */
+}
+ul {
+  list-style: none;
+}
+ul > li > a {
+  color: black;
+}
